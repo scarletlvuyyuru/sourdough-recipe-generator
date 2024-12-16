@@ -2,8 +2,16 @@ body{
     background-color: rgb(189, 171, 206);
     
 }
-header, main { text-align: center;}
+header, main { text-align: center;
+font-weight: 600;
+font-size: 32px;
+line-height: 1.5;}
 
 ul {
     list-style-type: none;
+}
+
+.container {
+    margin: 120px auto;
+    max-width: 600px;
 }
