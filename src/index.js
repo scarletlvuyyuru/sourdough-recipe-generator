@@ -8,6 +8,6 @@ function generateForm(event) {
     });
 }
 
-let textForForm = document.querySelector("#textForForm");
+let textForFormElement= document.querySelector("#textForForm");
 textForFormElement.addEventListener("submit", generateForm); 
 
