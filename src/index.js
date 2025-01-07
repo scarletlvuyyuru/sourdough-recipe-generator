@@ -19,8 +19,11 @@ let prompt = `User Instructions: What are sourdough recipes for ${instructionsIn
 let context = "You are a pastry chef teaching recipes to make with active sourdough starter. Provide the ingredient list and steps in basic HTML, seperating each line with a <br />> to make the user instructions simple and easy to follow. Remove ```html title from top margin.Make sure to follow user instructions for the recipe. ";
 let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-console.log(`prompt: ${prompt}`);
-console.log(`context: `);
+let recipeElement= document.querySelector("#recipe");
+recipeElement.innerHTML=`<div class="generating"> ⏳Generating a recipe about ${instructionsInput.value} 🪄</div>`;
+
+
+
 axios.get(apiUrl).then(displayRecipe);
 }
 
