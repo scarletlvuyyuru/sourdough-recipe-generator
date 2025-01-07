@@ -13,11 +13,13 @@ function displayRecipe(response) {
 
 function generateForm(event) {
     event.preventDefault();
+let instructionsInput = document.querySelector("#user-instructions");
 let apiKey = "61e11tf2503b89498d076obf6bbaf870";
-let prompt = "What are sourdough recipes using this topic";
-let context = "Provide example the the following format: Ingredients, Instructions";
+let prompt = `User Instructions: What are sourdough recipes for ${instructionsInput.value}`;
+let context = "You are a pastry chef teaching first time sour dough makers different recipes they can do with the active sourdough. Make sure to follow user instructions. ";
 let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${key}`
 
+console.log(`prompt : ${prompt}`);
 axios.get(apiUrl).then(displayRecipe);
 }
 
