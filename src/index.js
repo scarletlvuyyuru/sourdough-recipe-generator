@@ -1,9 +1,13 @@
-function generateForm(event)
-{
+function generateForm(event) {
     event.preventDefault();
-    alert("Generating Ideas...");
+    new Typewriter("#recipe", { 
+        strings: "Searching for a good recipe...",
+        autoStart: true,
+        delay: 1,
+        cursor: "", 
+    });
 }
 
-let textForForm = document.querySelector("#text-for-form");
+let textForForm = document.querySelector("#textForForm");
 textForFormElement.addEventListener("submit", generateForm); 
 
