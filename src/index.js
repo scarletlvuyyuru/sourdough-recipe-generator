@@ -2,7 +2,7 @@
 function displayRecipe(response) {
     
         new Typewriter("#recipe", { 
-            strings: "Searching for a good recipe...",
+            strings: response.data.answer,
             autoStart: true,
             delay: 1,
             cursor: "", 
@@ -16,10 +16,11 @@ function generateForm(event) {
 let instructionsInput = document.querySelector("#user-instructions");
 let apiKey = "61e11tf2503b89498d076obf6bbaf870";
 let prompt = `User Instructions: What are sourdough recipes for ${instructionsInput.value}`;
-let context = "You are a pastry chef teaching recipes to make with active sourdough starter. Provide the ingredient list and steps to make the user instructions. Make sure to follow user instructions for the recipe. ";
+let context = "You are a pastry chef teaching recipes to make with active sourdough starter. Provide the ingredient list and steps in basic HTML, seperating each line with a <br />> to make the user instructions simple and easy to follow. Remove ```html title from top margin.Make sure to follow user instructions for the recipe. ";
 let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-console.log(`prompt : ${prompt}`);
+console.log(`prompt: ${prompt}`);
+console.log(`context: `);
 axios.get(apiUrl).then(displayRecipe);
 }
 
