@@ -16,7 +16,7 @@ function generateForm(event) {
 let instructionsInput = document.querySelector("#user-instructions");
 let apiKey = "61e11tf2503b89498d076obf6bbaf870";
 let prompt = `User Instructions: What are sourdough recipes for ${instructionsInput.value}`;
-let context = "You are a pastry chef teaching first time sour dough makers different recipes they can do with the active sourdough. Make sure to follow user instructions. ";
+let context = "You are a pastry chef teaching recipes to make with active sourdough starter. Provide the ingredient list and steps to make the user instructions. Make sure to follow user instructions for the recipe. ";
 let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
 console.log(`prompt : ${prompt}`);
